@@ -15,7 +15,9 @@
   </group>
 
   <!-- ssc -->
-  <include file="$(find ssc_pm_lexus)/launch/speed_steering_control.launch" if="$(eval use_ssc==true)"/>
+  <include file="$(find ssc_pm_lexus)/launch/speed_steering_control.launch" if="$(eval use_ssc==true)">
+    <arg name="namespace" value="as"/>
+  </include>
 
   <!-- ssc_interface -->
   <include file="$(find as)/launch/ssc_interface.launch" if="$(eval use_ssc==true)"/>
