@@ -5,6 +5,8 @@
 
   <arg name="max_throttle" default="0.4"/>
   <arg name="max_brake" default="0.8"/>
+  <arg name="csv_path_accel_map" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/aip_xx1/accel_map.csv" />
+  <arg name="csv_path_brake_map" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/aip_xx1/brake_map.csv" />
 
   <arg name="pacmod_param_path" default="$(find-pkg-share pacmod_interface)/config/pacmod.param.yaml"/>
 
@@ -17,8 +19,8 @@
   <include file="$(find-pkg-share raw_vehicle_cmd_converter)/launch/raw_vehicle_converter.launch.xml">
     <arg name="max_throttle" value="$(var max_throttle)"/>
     <arg name="max_brake" value="$(var max_brake)"/>
-    <arg name="csv_path_accel_map" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/aip_xx1/accel_map.csv"/>
-    <arg name="csv_path_brake_map" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/aip_xx1/brake_map.csv"/>
+    <arg name="csv_path_accel_map" value="$(var csv_path_accel_map)"/>
+    <arg name="csv_path_brake_map" value="$(var csv_path_brake_map)"/>
   </include>
 
   <!-- pacmod_interface -->
