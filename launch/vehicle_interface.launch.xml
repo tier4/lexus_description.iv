@@ -2,15 +2,15 @@
 <launch>
 
   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
-  <arg name="csv_accel_brake_map_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/vehicle"/>
+  <arg name="csv_accel_brake_map_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod"/>
   <arg name="max_throttle" default="0.4"/>
   <arg name="max_brake" default="0.8"/>
   <arg name="convert_accel_cmd" default="true"/>
   <arg name="convert_brake_cmd" default="true"/>
   <arg name="convert_steer_cmd" default="false"/>
 
-  <arg name="pacmod_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/vehicle/pacmod.param.yaml"/>
-  <arg name="pacmod_extra_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/vehicle/pacmod_extra.param.yaml"/>
+  <arg name="pacmod_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod/pacmod.param.yaml"/>
+  <arg name="pacmod_extra_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod/pacmod_extra.param.yaml"/>
 
   <!-- pacmod3 -->
   <group>
