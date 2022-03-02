@@ -12,17 +12,12 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
 
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Remove exec_depend
         uses: autowarefoundation/autoware-github-actions/remove-exec-depend@tier4/proposal
-
-      - name: Register AutonomouStuff repository
-        uses: autowarefoundation/autoware-github-actions/register-autonomoustuff-repository@tier4/proposal
-        with:
-          rosdistro: galactic
 
       - name: Get modified packages
         id: get-modified-packages
@@ -59,17 +54,12 @@ jobs:
     needs: build-and-test-differential
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Remove exec_depend
         uses: autowarefoundation/autoware-github-actions/remove-exec-depend@tier4/proposal
-
-      - name: Register AutonomouStuff repository
-        uses: autowarefoundation/autoware-github-actions/register-autonomoustuff-repository@tier4/proposal
-        with:
-          rosdistro: galactic
 
       - name: Get modified packages
         id: get-modified-packages
