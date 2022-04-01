@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
+  <arg name="launch_vehicle_driver" default="true"/>
   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
   <arg name="csv_accel_brake_map_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod"/>
   <arg name="max_throttle" default="0.4"/>
@@ -14,7 +15,7 @@
 
   <!-- pacmod3 -->
   <group>
-    <include file="$(find-pkg-share lexus_description)/launch/pacmod3.launch.py" />
+    <include file="$(find-pkg-share lexus_description)/launch/pacmod3.launch.py" if="$(var launch_vehicle_driver)"/>
   </group>
 
   <!-- raw_vehicle_converter -->
