@@ -14,6 +14,7 @@
 
   <!-- pacmod3 -->
   <group>
+    <push-ros-namespace namespace="pacmod" />
     <include file="$(find-pkg-share lexus_description)/launch/pacmod3.launch.py" />
   </group>
 
