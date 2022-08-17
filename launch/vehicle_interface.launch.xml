@@ -8,13 +8,17 @@
   <arg name="convert_accel_cmd" default="true"/>
   <arg name="convert_brake_cmd" default="true"/>
   <arg name="convert_steer_cmd" default="false"/>
+  <arg name="socketcan_device" default="can0"/>
 
   <arg name="pacmod_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod/pacmod.param.yaml"/>
   <arg name="pacmod_extra_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod/pacmod_extra.param.yaml"/>
 
   <!-- pacmod3 -->
   <group>
-    <include file="$(find-pkg-share lexus_description)/launch/pacmod3.launch.py" />
+    <include file="$(find-pkg-share pacmod3)/launch/pacmod3.launch.xml" >
+      <arg name="use_socketcan" value="true"/>
+      <arg name="socketcan_device" value="$(var socketcan_device)" />
+    </include>
   </group>
 
   <!-- raw_vehicle_converter -->
