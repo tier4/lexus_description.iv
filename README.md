@@ -1,3 +1,5 @@
 # lexus_description.iv
 
-lexus_description for AutowareArchitectureProposal.iv
+this packages has following packages
+- lexus_description
+- lexus_launch
