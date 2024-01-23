@@ -3,11 +3,6 @@
 
   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
   <arg name="csv_accel_brake_map_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod"/>
-  <arg name="max_throttle" default="0.4"/>
-  <arg name="max_brake" default="0.8"/>
-  <arg name="convert_accel_cmd" default="true"/>
-  <arg name="convert_brake_cmd" default="true"/>
-  <arg name="convert_steer_cmd" default="false"/>
   <arg name="socketcan_device" default="can0"/>
 
   <arg name="pacmod_param_path" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/pacmod/pacmod.param.yaml"/>
@@ -23,13 +18,9 @@
 
   <!-- raw_vehicle_converter -->
   <include file="$(find-pkg-share raw_vehicle_cmd_converter)/launch/raw_vehicle_converter.launch.xml">
-    <arg name="max_throttle" value="$(var max_throttle)"/>
-    <arg name="max_brake" value="$(var max_brake)"/>
+    <arg name="config_file" value="$(find-pkg-share lexus_launch)/config/raw_vehicle_cmd_converter.param.yaml"/>
     <arg name="csv_path_accel_map" value="$(var csv_accel_brake_map_path)/accel_map.csv"/>
     <arg name="csv_path_brake_map" value="$(var csv_accel_brake_map_path)/brake_map.csv"/>
-    <arg name="convert_accel_cmd" value="$(var convert_accel_cmd)" />
-    <arg name="convert_brake_cmd" value="$(var convert_brake_cmd)" />
-    <arg name="convert_steer_cmd" value="$(var convert_steer_cmd)" />
   </include>
 
   <!-- accel brake map calibrator -->
