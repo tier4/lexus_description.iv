@@ -17,7 +17,7 @@
   </group>
 
   <!-- raw_vehicle_converter -->
-  <include file="$(find-pkg-share raw_vehicle_cmd_converter)/launch/raw_vehicle_converter.launch.xml">
+  <include file="$(find-pkg-share autoware_raw_vehicle_cmd_converter)/launch/raw_vehicle_converter.launch.xml">
     <arg name="config_file" value="$(find-pkg-share lexus_launch)/config/raw_vehicle_cmd_converter.param.yaml"/>
   </include>
 
