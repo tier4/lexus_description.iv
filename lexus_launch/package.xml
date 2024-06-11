@@ -9,7 +9,7 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
-  <exec_depend>accel_brake_map_calibrator</exec_depend>
+  <exec_depend>autoware_accel_brake_map_calibrator</exec_depend>
   <exec_depend>autoware_raw_vehicle_cmd_converter</exec_depend>
   <exec_depend>individual_params</exec_depend>
   <exec_depend>pacmod3</exec_depend>
