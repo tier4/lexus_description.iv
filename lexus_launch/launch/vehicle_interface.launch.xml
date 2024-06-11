@@ -24,7 +24,7 @@
   <!-- accel brake map calibrator -->
   <group>
     <push-ros-namespace namespace="vehicle/calibration/"/>
-    <include file="$(find-pkg-share accel_brake_map_calibrator)/launch/accel_brake_map_calibrator.launch.xml">
+    <include file="$(find-pkg-share autoware_accel_brake_map_calibrator)/launch/accel_brake_map_calibrator.launch.xml">
       <arg name="csv_default_map_dir" value="$(var csv_accel_brake_map_path)/"/>
       <arg name="rviz" value="false"/>
     </include>
