@@ -2,9 +2,9 @@
   ros__parameters:
     simulated_frame_id: "base_link"
     origin_frame_id: "map"
-    vehicle_model_type: "DELAY_STEER_ACC_GEARED"
+    vehicle_model_type: "DELAY_STEER_ACC_GEARED_WO_FALL_GUARD"
     initialize_source: "INITIAL_POSE_TOPIC"
-    timer_sampling_time_ms: 25
+    timer_sampling_time_ms: 20 # 25
     add_measurement_noise: False
     enable_road_slope_simulation: True
     vel_lim: 50.0
